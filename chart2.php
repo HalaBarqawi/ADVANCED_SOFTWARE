@@ -8,7 +8,7 @@ $username = "root";
 //this is the value you specified during installation of WAMP stack
 $password = "";
 //name of the db under which the table is created
-$dbName = "videogames2";
+$dbName = "video-games";
 //establishing the connection to the db.
 $conn = new mysqli($servername, $username, $password, $dbName);
 //checking if there were any error during the last connection attempt
@@ -16,101 +16,74 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM videogames2 where Genre ='Sports'";
+$query = "SELECT * FROM vgsales where Year=2001";
 //storing the result of the executed query
 $result = $conn->query($query);
-$count =$result->num_rows;
+$count1 =$result->num_rows;
 
 
-$query = "SELECT * FROM videogames2 where Genre ='Platform'";
+$query = "SELECT * FROM vgsales where Year=2002";
 //storing the result of the executed query
 $result = $conn->query($query);
-$countp =$result->num_rows;
+$count2 =$result->num_rows;
 
 
-$query = "SELECT * FROM videogames2 where Genre ='Racing'";
+$query = "SELECT * FROM vgsales where Year=2003";
 //storing the result of the executed query
 $result = $conn->query($query);
-$countR =$result->num_rows;
+$count3 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Genre ='Puzzle'";
+$query = "SELECT * FROM vgsales where Year=2004";
 //storing the result of the executed query
 $result = $conn->query($query);
-$countPU =$result->num_rows;
+$count4 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Genre ='Action'";
+$query = "SELECT * FROM vgsales where Year=2005";
 //storing the result of the executed query
 $result = $conn->query($query);
-$countA =$result->num_rows;
+$count5 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Genre ='Misc'";
+$query = "SELECT * FROM vgsales where Year=2006";
 //storing the result of the executed query
 $result = $conn->query($query);
-$countM =$result->num_rows;
+$count6 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Genre ='Shooter'";
+$query = "SELECT * FROM vgsales where Year=2007";
 //storing the result of the executed query
 $result = $conn->query($query);
-$counts =$result->num_rows;
-$jsonArray = array();
-/*
-$sportcount=0;
-$platcount=0;
-$Sports='Sports';
-$row = $result->fetch_assoc();
-//check if there is any data returned by the SQL Query
-$x=16599;
-while($x>0) {
-    if ($row["Genre"] =='Sports') {
-        $sportcount++;
+$count7 =$result->num_rows;
 
-    } elseif ($result == "Platform") {
-        $platcount++;
-    }
-    $x--;
-    $row["Genre"]++;
-}
-echo $sportcount;*/
+$query = "SELECT * FROM vgsales where Year=2008";
+//storing the result of the executed query
+$result = $conn->query($query);
+$count8 =$result->num_rows;
+
+$query = "SELECT * FROM  vgsales where Year=2009";
+//storing the result of the executed query
+$result = $conn->query($query);
+$count9 =$result->num_rows;
+
+$query = "SELECT * FROM vgsales where Year=2010";
+//storing the result of the executed query
+$result = $conn->query($query);
+$count10 =$result->num_rows;
+
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
     <script>
-        window.onload = function() {
+        window.onload = function () {
 
-            var chart = new CanvasJS.Chart("chartContainer", {
-                theme: "light2", // "light1", "light2", "dark1", "dark2"
-                exportEnabled: true,
-                animationEnabled: true,
-                title: {
-                    text: "COUNT FOR EACH VIEDO GAMES TYPE "
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 25,
-                    toolTipContent: "<b>{label}</b>: {y}",
-                    showInLegend: "true",
-                    legendText: "{label}",
-                    indexLabelFontSize: 16,
-                    indexLabel: "{label} - {y}",
-                    dataPoints: [
-                        { y: <?php echo $countM ?>, label: "Misc" },
-                        { y: <?php echo  $countp ?>, label: "Platform" },
-                        { y: <?php echo $countPU ?>, label: "Puzzle" },
-                        { y: <?php echo $count ?>, label: "Sports" },
-                        { y: <?php echo$countA ?>, label: "Action" },
-                        { y: <?php echo $countR ?>, label: "Racing" },
-                        { y: <?php echo $counts ?>, label: "Shooter" }
-                    ]
-                }]
-            });
-            chart.render();
+
 
         }
+
     </script>
+
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ $username = "root";
 //this is the value you specified during installation of WAMP stack
 $password = "";
 //name of the db under which the table is created
-$dbName = "videogames2";
+$dbName = "video-games";
 //establishing the connection to the db.
 $conn = new mysqli($servername, $username, $password, $dbName);
 //checking if there were any error during the last connection attempt
@@ -16,53 +16,53 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM videogames2 where Year=2001 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2001 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp1 =$result->num_rows;
 
 
-$query = "SELECT * FROM videogames2 where Year=2002 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2002 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp2 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2003 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2003 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp3 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2004 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2004 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp4 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2005 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2005 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp5 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2006 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2006 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp6 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2007 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2007 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp7 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2008 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2008 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp8 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2009 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2009 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp9 =$result->num_rows;
 
-$query = "SELECT * FROM videogames2 where Year=2010 AND Genre='Action'";
+$query = "SELECT * FROM vgsales where Year=2010 AND Genre='Action'";
 //storing the result of the executed query
 $result = $conn->query($query);
 $countp10 =$result->num_rows;
@@ -91,7 +91,7 @@ echo $sportcount;*/
     <script>
         window.onload = function () {
 
-            var chart = new CanvasJS.Chart("chartContainer", {
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
                 animationEnabled: true,
                 title:{
                     text: "number of Action games for each year",
@@ -118,13 +118,13 @@ echo $sportcount;*/
                     ]
                 }]
             });
-            chart.render();
+            chart2.render();
 
         }
     </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<div id="chartContainer2" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
